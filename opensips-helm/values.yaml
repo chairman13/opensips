@@ -1,0 +1,17 @@
+# ~/opensips-helm/values.yaml
+image:
+  repository: europe-west1-docker.pkg.dev/opensips-ims-lab/opensips-repo/opensips
+  tag: "3.4-with-editors"
+  pullPolicy: Always
+
+config:
+  listen_ip: "0.0.0.0"
+  listen_port: 5060
+  log_level: 3
+  db_mode: 1
+
+mysql:
+  host: mysql-hss.ims.svc.cluster.local
+  database: opensips
+  username: opensips
+  password: opensipspass

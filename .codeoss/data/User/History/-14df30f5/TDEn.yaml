@@ -1,0 +1,194 @@
+# Namespace definition to isolate all Homer components
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: homer
+---
+# ConfigMap storing PostgreSQL connection info
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homer-config
+  namespace: homer
+data:
+  DB_HOST: postgres-postgresql.default.svc.cluster.local  # Internal service name of PostgreSQL
+  DB_PORT: "5432"                                         # Default PostgreSQL port
+  DB_USER: postgres                                       # Username for PostgreSQL
+  DB_NAME: homer                                          # Homer database name
+---
+# Secret to store sensitive PostgreSQL password (base64 encoded)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: homer-secrets
+  namespace: homer
+type: Opaque
+data:
+  DB_PASSWORD: bXlzZWNyZXRwYXNzd29yZA==  # base64 for 'mysecretpassword'
+---
+# Deployment of the Homer API service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homer-api
+  namespace: homer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homer-api
+  template:
+    metadata:
+      labels:
+        app: homer-api
+    spec:
+      containers:
+      - name: homer-api
+        image: sipcapture/homer-api:master  # Homer API container image
+        ports:
+        - containerPort: 9080  # API listens on port 9080
+        env:
+        # Environment variables are loaded from the config map and secret
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_PORT
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_USER
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: homer-secrets
+              key: DB_PASSWORD
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_NAME
+---
+# Service to expose Homer API internally within the cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: homer-api
+  namespace: homer
+spec:
+  selector:
+    app: homer-api
+  ports:
+    - protocol: TCP
+      port: 80           # Expose service on port 80 internally
+      targetPort: 9080   # Forwards to container port 9080
+---
+# Deployment of the Homer Web UI frontend
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homer-webapp
+  namespace: homer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homer-webapp
+  template:
+    metadata:
+      labels:
+        app: homer-webapp
+    spec:
+      containers:
+      - name: homer-webapp
+        image: sipcapture/webapp:master  # Homer Web UI container image
+        ports:
+        - containerPort: 80  # Default HTTP port
+        env:
+        - name: API_URL
+          value: "http://homer-api.homer.svc.cluster.local"  # URL to connect to Homer API
+---
+# External LoadBalancer service to access the Web UI over the internet
+apiVersion: v1
+kind: Service
+metadata:
+  name: homer-webapp
+  namespace: homer
+spec:
+  type: LoadBalancer  # Expose to external IP via cloud provider
+  selector:
+    app: homer-webapp
+  ports:
+    - protocol: TCP
+      port: 80           # External access via HTTP
+      targetPort: 80     # Forwards to container port 80
+---
+# Deployment for Heplify server to receive HEP traffic
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heplify-server
+  namespace: homer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heplify-server
+  template:
+    metadata:
+      labels:
+        app: heplify-server
+    spec:
+      containers:
+      - name: heplify-server
+        image: sipcapture/heplify-server:latest  # HEP packet capture agent
+        args: ["-listen=0.0.0.0:9060", "-type=HEP"]  # Configure listener and mode
+        ports:
+        - containerPort: 9060  # UDP port for HEP traffic
+        env:
+        # Database connection parameters from config map and secret
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_PORT
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_USER
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: homer-secrets
+              key: DB_PASSWORD
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: homer-config
+              key: DB_NAME
+---
+# Service to expose Heplify server for receiving HEP traffic
+apiVersion: v1
+kind: Service
+metadata:
+  name: heplify-server
+  namespace: homer
+spec:
+  selector:
+    app: heplify-server
+  ports:
+    - protocol: UDP
+      port: 9060         # Port to receive HEP traffic
+      targetPort: 9060   # Forwards to container's 9060 port

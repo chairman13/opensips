@@ -1,0 +1,695 @@
+language client is not ready, cannot initialize chat state
+I0411 07:50:58.972273    1749 serve.go:43] cloudcode_cli (Mar 25 2025 19:59:47 -0700, cl:740584268 baseline:740583863)
+I0411 07:50:58.972324    1749 serve.go:44] Command line: ["/home/huseyinbagci973/.cache/cloud-code/cloudcode_cli/cloudcode_cli/413fde1b/cloudcode_cli" "duet" "-logtostderr"]
+I0411 07:50:58.977625    1749 life_cycle.go:182] Initializing. Architecture: "amd64", Operating system: "linux"
+I0411 07:50:59.092888    1749 configuration.go:185] product updateChannel will be used
+I0411 07:50:59.092945    1749 configuration.go:686] language thresholds: map[]
+I0411 07:50:59.092964    1749 configuration.go:630] dataFileExtensions array: [.csv .tsv .jsonl]
+I0411 07:50:59.092987    1749 configuration.go:897] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc00127a9bd StopSequences:map[] DataFilePromptLines:0}
+I0411 07:50:59.093087    1749 configuration.go:897] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc00127a9dd StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0411 07:50:59.093245    1749 configuration.go:279] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0411 07:50:59.093297    1749 configuration.go:287] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0411 07:50:59.093308    1749 configuration.go:291] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:0 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:false enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:4194304 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace raglEnableWaldFileSelection:false raglWaldMaxFileSearchDepth:0}
+I0411 07:50:59.093347    1749 configuration.go:293] Configured settings for canCancelRequests: true
+I0411 07:50:59.093357    1749 configuration.go:295] Configured settings for contextPromptOpts: &{Endpoint:}
+I0411 07:51:00.497125    1749 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:00.497173    1749 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:00.497192    1749 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:00.497214    1749 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:00.497225    1749 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:00.497239    1749 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:00.497262    1749 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:00.497277    1749 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:00.497296    1749 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:00.497314    1749 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:00.497328    1749 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:00.497345    1749 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:00.497357    1749 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:00.497368    1749 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:00.497377    1749 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:00.497388    1749 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:00.497412    1749 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:00.497425    1749 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:00.497436    1749 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:00.497451    1749 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:00.497464    1749 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:00.497475    1749 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:00.497492    1749 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:00.497507    1749 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:00.497520    1749 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:00.497536    1749 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:00.497551    1749 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:00.497573    1749 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:00.497614    1749 configuration.go:498] Repopulating context cache from document cache
+I0411 07:51:00.497708    1749 tier.go:17] Received tier configuration request: {ProjectID:cloudshell-gca UserDefinedCloudaicompanionProject:true}
+I0411 07:51:00.502774    1749 configuration.go:185] product updateChannel will be used
+I0411 07:51:00.502830    1749 configuration.go:686] language thresholds: map[]
+I0411 07:51:00.502849    1749 configuration.go:630] dataFileExtensions array: [.csv .tsv .jsonl]
+I0411 07:51:00.502875    1749 configuration.go:897] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc00127bacd StopSequences:map[] DataFilePromptLines:0}
+I0411 07:51:00.502904    1749 configuration.go:897] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc00127baed StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0411 07:51:00.502938    1749 configuration.go:279] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0411 07:51:00.502954    1749 configuration.go:287] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0411 07:51:00.502962    1749 configuration.go:291] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:0 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:true enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:4194304 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace raglEnableWaldFileSelection:false raglWaldMaxFileSearchDepth:0}
+I0411 07:51:00.502995    1749 configuration.go:293] Configured settings for canCancelRequests: true
+I0411 07:51:00.503014    1749 configuration.go:295] Configured settings for contextPromptOpts: &{Endpoint:}
+I0411 07:51:00.503876    1749 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:00.503904    1749 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:00.503921    1749 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:00.503945    1749 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:00.503957    1749 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:00.503971    1749 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:00.503986    1749 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:00.504002    1749 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:00.504019    1749 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:00.504038    1749 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:00.504076    1749 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:00.504096    1749 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:00.504107    1749 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:00.504121    1749 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:00.504130    1749 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:00.504141    1749 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:00.504164    1749 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:00.504179    1749 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:00.504192    1749 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:00.504210    1749 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:00.504223    1749 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:00.504236    1749 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:00.504254    1749 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:00.504269    1749 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:00.504283    1749 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:00.504297    1749 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:00.504315    1749 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:00.504335    1749 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:00.504364    1749 configuration.go:498] Repopulating context cache from document cache
+I0411 07:51:00.505860    1749 cloudcode.go:45] Using Cloud Code API
+I0411 07:51:00.511443    1749 client.go:442] CompleteCode request: {"enablePromptEnhancement":true,"ideContext":{"currentFile":{"segments":[{"content":"Code Assist healthcheck id: e72997c9-e189-44c3-9fc8-10cd8320d289\nPi = "},{"isSelected":true},{}]}},"metadata":{"ideName":"Code OSS for Cloud Shell","ideType":"CLOUD_SHELL","ideVersion":"1.94.2-cde","platform":"LINUX_AMD64","pluginType":"CLOUD_CODE","pluginVersion":"2.30.0"},"project":"cloudshell-gca","requestId":"cloudcode-740584268-950cec51-53fd-4e73-affa-f43e2f49e928"}
+W0411 07:51:00.811511    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+I0411 07:51:00.811721    1749 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:00.811740    1749 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:00.811756    1749 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:00.811778    1749 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:00.811789    1749 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:00.811802    1749 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:00.811815    1749 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:00.811830    1749 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:00.811847    1749 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:00.811867    1749 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:00.811881    1749 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:00.811897    1749 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:00.811906    1749 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:00.811918    1749 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:00.811926    1749 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:00.811937    1749 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:00.811954    1749 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:00.811967    1749 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:00.811976    1749 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:00.811990    1749 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:00.812001    1749 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:00.812011    1749 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:00.812026    1749 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:00.812040    1749 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:00.812069    1749 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:00.812084    1749 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:00.812099    1749 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:00.812119    1749 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:00.861873    1749 tier.go:17] Received tier configuration request: {ProjectID:cloudshell-gca UserDefinedCloudaicompanionProject:true}
+I0411 07:51:00.865619    1749 configuration.go:185] product updateChannel will be used
+I0411 07:51:00.865671    1749 configuration.go:686] language thresholds: map[]
+I0411 07:51:00.865689    1749 configuration.go:630] dataFileExtensions array: [.csv .tsv .jsonl]
+I0411 07:51:00.865713    1749 configuration.go:897] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc001091fed StopSequences:map[] DataFilePromptLines:0}
+I0411 07:51:00.865745    1749 configuration.go:897] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc000f8e00d StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0411 07:51:00.865786    1749 configuration.go:279] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0411 07:51:00.865802    1749 configuration.go:287] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0411 07:51:00.865812    1749 configuration.go:291] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:0 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:true enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:4194304 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace raglEnableWaldFileSelection:false raglWaldMaxFileSearchDepth:0}
+I0411 07:51:00.865846    1749 configuration.go:293] Configured settings for canCancelRequests: true
+I0411 07:51:00.865855    1749 configuration.go:295] Configured settings for contextPromptOpts: &{Endpoint:}
+I0411 07:51:00.866402    1749 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:00.866494    1749 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:00.866516    1749 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:00.866560    1749 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:00.866574    1749 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:00.866587    1749 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:00.866604    1749 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:00.866639    1749 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:00.866715    1749 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:00.866739    1749 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:00.866756    1749 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:00.866774    1749 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:00.866804    1749 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:00.866818    1749 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:00.866829    1749 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:00.866841    1749 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:00.866861    1749 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:00.866897    1749 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:00.866908    1749 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:00.866925    1749 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:00.866937    1749 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:00.866969    1749 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:00.866993    1749 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:00.867010    1749 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:00.867024    1749 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:00.867072    1749 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:00.867089    1749 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:00.867108    1749 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:00.867156    1749 configuration.go:498] Repopulating context cache from document cache
+I0411 07:51:00.868107    1749 client.go:442] CompleteCode request: {"enablePromptEnhancement":true,"ideContext":{"currentFile":{"segments":[{"content":"Code Assist healthcheck id: ed238dfd-9bb3-4aa0-86ca-719fdf772e0d\nPi = "},{"isSelected":true},{}]}},"metadata":{"ideName":"Code OSS for Cloud Shell","ideType":"CLOUD_SHELL","ideVersion":"1.94.2-cde","platform":"LINUX_AMD64","pluginType":"CLOUD_CODE","pluginVersion":"2.30.0"},"project":"cloudshell-gca","requestId":"cloudcode-740584268-73392e78-0ef7-4911-b5a8-c72268e3e329"}
+W0411 07:51:01.235722    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:01.308548    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:01.363478    1749 rag_cache.go:773] Tokenization failed for URI file:///home/huseyinbagci973/homer.yaml: tokenizeFunc returned no words
+I0411 07:51:01.592236    1749 conversation.go:905] Starting getChatIDEContext with detected intent: 
+I0411 07:51:01.592289    1749 document.go:444] NoneEditType, returning ReasonRecentlyOpened
+I0411 07:51:01.592338    1749 ide_context.go:117] Unable to read file at /home/huseyinbagci973/.aiexclude
+/home/huseyinbagci973
+file:///home/huseyinbagci973
+I0411 07:51:01.592353    1749 conversation.go:950] Unable to retrieve excluded files for request #8: open /home/huseyinbagci973/.aiexclude: no such file or directory
+I0411 07:51:01.592382    1749 rag_cache.go:1105] Retrieving and scoring colocated and open files
+I0411 07:51:01.592391    1749 rag_cache.go:1138] rerankByLangBoost=0
+W0411 07:51:02.032834    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:02.032869    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:02.032881    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:02.032890    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/1-EditorConfig.log
+W0411 07:51:02.032897    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/vscode.git/Git.log
+W0411 07:51:02.032903    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:02.603429    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:02.603454    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:03.047106    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:03.592282    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:03.592309    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:04.042832    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:04.594242    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:04.594268    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:05.039646    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:05.595315    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:05.595338    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:06.037979    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:06.595415    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:06.595438    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:07.038850    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:08.547153    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:08.547199    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:08.547209    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:08.989117    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:09.599142    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:09.599170    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:10.043001    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:10.601665    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:10.601690    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:11.062565    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:11.599799    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:11.599824    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:12.044010    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:13.553838    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:13.553862    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:13.553871    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:13.996759    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:14.600230    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:14.600255    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:15.053924    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:15.604836    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:15.604860    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:16.047223    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:16.608695    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:16.608722    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:17.051305    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:18.553367    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:18.553419    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:18.553432    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:18.996377    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:19.608148    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:19.608185    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:20.065595    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:20.606129    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:20.606162    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:21.072404    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:21.608918    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:21.608945    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:22.052043    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:23.558346    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:23.558377    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:23.558410    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:24.001026    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:24.608743    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:24.608768    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:25.051435    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:25.609636    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:25.609664    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:26.051451    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:26.610035    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:26.610087    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:27.053731    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:28.560326    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:28.560364    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:28.560374    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:29.010222    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/1-EditorConfig.log
+W0411 07:51:29.010248    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:29.611330    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:29.611355    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:30.061784    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:30.612432    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:30.612458    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:31.061002    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+I0411 07:51:31.156959    1749 conversation.go:905] Starting getChatIDEContext with detected intent: 
+I0411 07:51:31.157094    1749 document.go:448] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0411 07:51:31.157268    1749 ide_context.go:117] Unable to read file at /home/huseyinbagci973/.aiexclude
+/home/huseyinbagci973
+file:///home/huseyinbagci973
+I0411 07:51:31.157295    1749 conversation.go:950] Unable to retrieve excluded files for request #10: open /home/huseyinbagci973/.aiexclude: no such file or directory
+I0411 07:51:31.157446    1749 rag_cache.go:1105] Retrieving and scoring colocated and open files
+I0411 07:51:31.157459    1749 rag_cache.go:1138] rerankByLangBoost=0
+W0411 07:51:31.610960    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:31.610987    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:31.610996    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:32.051859    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:32.618624    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/1-EditorConfig.log
+W0411 07:51:32.618648    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:32.618658    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:33.068997    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/4-Cloud%20Code%20Yaml%20Support.log
+W0411 07:51:33.069024    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:33.610687    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:33.610711    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:33.984079    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/4-Cloud%20Code%20Yaml%20Support.log
+W0411 07:51:33.984109    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:34.613664    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:34.613689    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:35.056693    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:35.613690    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:35.613717    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:36.059884    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:36.614922    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/1-EditorConfig.log
+W0411 07:51:36.614947    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:36.614957    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:37.057111    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:37.615171    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:37.615195    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:38.059647    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:38.618013    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:38.618042    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:39.062599    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:39.617029    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:39.617083    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:40.058799    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:40.618702    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:40.618726    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:41.059990    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:41.618126    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:41.618151    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+W0411 07:51:42.059021    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:42.620133    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/logs/20250411T075034/exthost1/output_logging_20250411T075041/5-Gemini%20Code%20Assist.log
+W0411 07:51:42.620166    1749 rag_cache.go:959] DidChangeWatchedFiles Cached error: trying to get document with URI uncached: file:///home/huseyinbagci973/.codeoss/data/User/workspaceStorage/-3667ed1a/vscode.lock
+runtime: running GoogleExitFunction
+
+goroutine 30 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc001986840, {0xc00166b780, 0x32}, {0xc000f4b3d0, 0x9}, {0xc000f554d0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc001986840, {0xc00166b780, 0x32}, {0xc000f4b3d0, 0x9}, {0xc000f554d0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc001986840, {0x2ebc328, 0xc000f55470}, 0xc000ed9a80)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).handle.func11({0x2ebc328, 0xc000f55470}, {{{0xc00166b740, 0x32}, {0xc000f4b3d0, 0x9}, 0x1, {0xc000f5a800, 0x391}}})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:557 +0x17d
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.withMetrics[...]({0x2ebc328?, 0xc000f55380}, {0x2eb6980, 0xc001099508}, {0x29c3f46, 0x32}, 0xc00199fd60, {{{0xc00166b740, 0x32}, {0xc000f4b3d0, ...}, ...}}, ...)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/metrics.go:136 +0x1fb
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.dispatchWithRequiredMetrics[...].func1({{{0xc00166b740?, 0x32?}, {0xc000f4b3d0, 0x9}, 0x1, {0xc000f5a800, 0x391}}})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:381 +0xc5
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.dispatch[...]({0x2ebc328, 0xc000f55380}, 0xc00199fc10, {0x2ed2e40, 0xc0011eed58})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:393 +0x22f
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.dispatchWithRequiredMetrics[...]({0x2ebc328?, 0xc000f55380?}, {0x2eb6980?, 0xc001099508?}, {0x2ed2e40?, 0xc0011eed58?}, {0x29c3f46?, 0xc00100b540?}, 0xc00199fd60)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:380 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).handle(0xc001099508, {0x2ebc0a0, 0x520fa80}, 0x2218e20?, 0xc0012222d0)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:551 +0xf2b
+google3/third_party/golang/jsonrpc2/jsonrpc2.(*HandlerWithErrorConfigurer).Handle(0xc0010fd310, {0x2ebc0a0, 0x520fa80}, 0xc00196a510, 0xc0012222d0)
+	third_party/golang/jsonrpc2/handler_with_error.go:21 +0x57
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).run(0xc001978720, {0x2ebc0a0, 0x520fa80}, 0xc00196a510, 0xc0012222d0)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:148 +0x185
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).dispatch(0xc001978720, {0x2ebc0a0, 0x520fa80}, 0xc00196a510, 0xc0012222d0)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:138 +0x174
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).EnableDispatch.func1()
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:59 +0x8f
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).EnableDispatch in goroutine 27
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:57 +0x4f
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1a7263f]
+
+goroutine 30 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc001986840, {0xc00166b780, 0x32}, {0xc000f4b3d0, 0x9}, {0xc000f554d0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc001986840, {0xc00166b780, 0x32}, {0xc000f4b3d0, 0x9}, {0xc000f554d0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc001986840, {0x2ebc328, 0xc000f55470}, 0xc000ed9a80)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).handle.func11({0x2ebc328, 0xc000f55470}, {{{0xc00166b740, 0x32}, {0xc000f4b3d0, 0x9}, 0x1, {0xc000f5a800, 0x391}}})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:557 +0x17d
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.withMetrics[...]({0x2ebc328?, 0xc000f55380}, {0x2eb6980, 0xc001099508}, {0x29c3f46, 0x32}, 0xc00199fd60, {{{0xc00166b740, 0x32}, {0xc000f4b3d0, ...}, ...}}, ...)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/metrics.go:136 +0x1fb
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.dispatchWithRequiredMetrics[...].func1({{{0xc00166b740?, 0x32?}, {0xc000f4b3d0, 0x9}, 0x1, {0xc000f5a800, 0x391}}})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:381 +0xc5
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.dispatch[...]({0x2ebc328, 0xc000f55380}, 0xc00199fc10, {0x2ed2e40, 0xc0011eed58})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:393 +0x22f
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.dispatchWithRequiredMetrics[...]({0x2ebc328?, 0xc000f55380?}, {0x2eb6980?, 0xc001099508?}, {0x2ed2e40?, 0xc0011eed58?}, {0x29c3f46?, 0xc00100b540?}, 0xc00199fd60)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:380 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).handle(0xc001099508, {0x2ebc0a0, 0x520fa80}, 0x2218e20?, 0xc0012222d0)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.go:551 +0xf2b
+google3/third_party/golang/jsonrpc2/jsonrpc2.(*HandlerWithErrorConfigurer).Handle(0xc0010fd310, {0x2ebc0a0, 0x520fa80}, 0xc00196a510, 0xc0012222d0)
+	third_party/golang/jsonrpc2/handler_with_error.go:21 +0x57
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).run(0xc001978720, {0x2ebc0a0, 0x520fa80}, 0xc00196a510, 0xc0012222d0)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:148 +0x185
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).dispatch(0xc001978720, {0x2ebc0a0, 0x520fa80}, 0xc00196a510, 0xc0012222d0)
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:138 +0x174
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).EnableDispatch.func1()
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:59 +0x8f
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*SerialRequestHandler).EnableDispatch in goroutine 27
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/handler.go:57 +0x4f
+[Info  - 7:51:43 AM] Connection to server got closed. Server will restart.
+true
+[Error - 7:51:43 AM] Server process exited with code 2.
+I0411 07:51:43.151477    1819 serve.go:43] cloudcode_cli (Mar 25 2025 19:59:47 -0700, cl:740584268 baseline:740583863)
+I0411 07:51:43.151528    1819 serve.go:44] Command line: ["/home/huseyinbagci973/.cache/cloud-code/cloudcode_cli/cloudcode_cli/413fde1b/cloudcode_cli" "duet" "-logtostderr"]
+I0411 07:51:43.161419    1819 life_cycle.go:182] Initializing. Architecture: "amd64", Operating system: "linux"
+I0411 07:51:43.222186    1819 configuration.go:185] product updateChannel will be used
+I0411 07:51:43.222243    1819 configuration.go:686] language thresholds: map[]
+I0411 07:51:43.222262    1819 configuration.go:630] dataFileExtensions array: [.csv .tsv .jsonl]
+I0411 07:51:43.222284    1819 configuration.go:897] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc001246b9d StopSequences:map[] DataFilePromptLines:0}
+I0411 07:51:43.222316    1819 configuration.go:897] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc001246bcd StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0411 07:51:43.222428    1819 configuration.go:279] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0411 07:51:43.222462    1819 configuration.go:287] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0411 07:51:43.222472    1819 configuration.go:291] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:0 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:false enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:4194304 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace raglEnableWaldFileSelection:false raglWaldMaxFileSearchDepth:0}
+I0411 07:51:43.222508    1819 configuration.go:293] Configured settings for canCancelRequests: true
+I0411 07:51:43.222518    1819 configuration.go:295] Configured settings for contextPromptOpts: &{Endpoint:}
+I0411 07:51:48.473167    1819 handler.go:159] cancel was requested for: 2, needs to be canceled: false
+I0411 07:51:48.473184    1819 handler.go:163] cancel requested for 2 but not found
+I0411 07:51:48.473367    1819 handler.go:159] cancel was requested for: 4, needs to be canceled: false
+I0411 07:51:48.473379    1819 handler.go:163] cancel requested for 4 but not found
+I0411 07:51:48.473550    1819 handler.go:159] cancel was requested for: 5, needs to be canceled: false
+I0411 07:51:48.473560    1819 handler.go:163] cancel requested for 5 but not found
+I0411 07:51:48.473769    1819 handler.go:159] cancel was requested for: 6, needs to be canceled: false
+I0411 07:51:48.473779    1819 handler.go:163] cancel requested for 6 but not found
+I0411 07:51:48.531926    1819 conversation.go:905] Starting getChatIDEContext with detected intent: 
+I0411 07:51:48.531989    1819 document.go:444] NoneEditType, returning ReasonRecentlyOpened
+I0411 07:51:48.532083    1819 ide_context.go:117] Unable to read file at /home/huseyinbagci973/.aiexclude
+/home/huseyinbagci973
+file:///home/huseyinbagci973
+I0411 07:51:48.532101    1819 conversation.go:950] Unable to retrieve excluded files for request #9: open /home/huseyinbagci973/.aiexclude: no such file or directory
+I0411 07:51:48.532223    1819 document.go:444] NoneEditType, returning ReasonRecentlyOpened
+I0411 07:51:49.790555    1819 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:49.790591    1819 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:49.790609    1819 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:49.790630    1819 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:49.790651    1819 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:49.790663    1819 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:49.790672    1819 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:49.790689    1819 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:49.790700    1819 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:49.790719    1819 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:49.790730    1819 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:49.790741    1819 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:49.790751    1819 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:49.790769    1819 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:49.790782    1819 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:49.790797    1819 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:49.790810    1819 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:49.790820    1819 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:49.790833    1819 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:49.790848    1819 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:49.790859    1819 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:49.790869    1819 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:49.790881    1819 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:49.790896    1819 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:49.790913    1819 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:49.790929    1819 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:49.790946    1819 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:49.790966    1819 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:49.791009    1819 configuration.go:498] Repopulating context cache from document cache
+I0411 07:51:49.791126    1819 tier.go:17] Received tier configuration request: {ProjectID:cloudshell-gca UserDefinedCloudaicompanionProject:true}
+runtime: running GoogleExitFunction
+
+goroutine 12 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc0005778c0, {0xc0016f2340, 0x32}, {0xc0010aa2d0, 0x9}, {0xc00053a180, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc0005778c0, {0xc0016f2340, 0x32}, {0xc0010aa2d0, 0x9}, {0xc00053a180, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc0005778c0, {0x2ebc328, 0xc00052b830}, 0xc0004f7440)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc00105f508, {0x2ebc328, 0xc00052b830})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 11
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1a7263f]
+
+goroutine 12 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc0005778c0, {0xc0016f2340, 0x32}, {0xc0010aa2d0, 0x9}, {0xc00053a180, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc0005778c0, {0xc0016f2340, 0x32}, {0xc0010aa2d0, 0x9}, {0xc00053a180, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc0005778c0, {0x2ebc328, 0xc00052b830}, 0xc0004f7440)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc00105f508, {0x2ebc328, 0xc00052b830})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 11
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+[Info  - 7:51:49 AM] Connection to server got closed. Server will restart.
+true
+[Error - 7:51:49 AM] Server process exited with code 2.
+I0411 07:51:49.967033    1829 serve.go:43] cloudcode_cli (Mar 25 2025 19:59:47 -0700, cl:740584268 baseline:740583863)
+I0411 07:51:49.967112    1829 serve.go:44] Command line: ["/home/huseyinbagci973/.cache/cloud-code/cloudcode_cli/cloudcode_cli/413fde1b/cloudcode_cli" "duet" "-logtostderr"]
+I0411 07:51:49.968859    1829 life_cycle.go:182] Initializing. Architecture: "amd64", Operating system: "linux"
+I0411 07:51:50.030872    1829 configuration.go:185] product updateChannel will be used
+I0411 07:51:50.030925    1829 configuration.go:686] language thresholds: map[]
+I0411 07:51:50.030943    1829 configuration.go:630] dataFileExtensions array: [.csv .tsv .jsonl]
+I0411 07:51:50.030964    1829 configuration.go:897] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc00192b5dd StopSequences:map[] DataFilePromptLines:0}
+I0411 07:51:50.031002    1829 configuration.go:897] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc00192b5fd StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0411 07:51:50.031162    1829 configuration.go:279] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0411 07:51:50.031202    1829 configuration.go:287] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0411 07:51:50.031213    1829 configuration.go:291] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:0 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:false enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:4194304 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace raglEnableWaldFileSelection:false raglWaldMaxFileSearchDepth:0}
+I0411 07:51:50.031265    1829 configuration.go:293] Configured settings for canCancelRequests: true
+I0411 07:51:50.031274    1829 configuration.go:295] Configured settings for contextPromptOpts: &{Endpoint:}
+I0411 07:51:51.373374    1829 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:51.373416    1829 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:51.373434    1829 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:51.373453    1829 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:51.373477    1829 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:51.373496    1829 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:51.373512    1829 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:51.373530    1829 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:51.373540    1829 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:51.373597    1829 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:51.373614    1829 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:51.373626    1829 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:51.373640    1829 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:51.373649    1829 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:51.373662    1829 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:51.373671    1829 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:51.373684    1829 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:51.373699    1829 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:51.373717    1829 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:51.373729    1829 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:51.373741    1829 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:51.373759    1829 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:51.373788    1829 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:51.373800    1829 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:51.373813    1829 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:51.373829    1829 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:51.373845    1829 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:51.373864    1829 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:51.373907    1829 configuration.go:498] Repopulating context cache from document cache
+I0411 07:51:51.373997    1829 tier.go:17] Received tier configuration request: {ProjectID:cloudshell-gca UserDefinedCloudaicompanionProject:true}
+runtime: running GoogleExitFunction
+
+goroutine 13 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc0019280c0, {0xc0012f4500, 0x32}, {0xc00192bd30, 0x9}, {0xc0019564b0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc0019280c0, {0xc0012f4500, 0x32}, {0xc00192bd30, 0x9}, {0xc0019564b0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc0019280c0, {0x2ebc328, 0xc0018c87e0}, 0xc0007605c0)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc0017fca88, {0x2ebc328, 0xc0018c87e0})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 12
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1a7263f]
+
+goroutine 13 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc0019280c0, {0xc0012f4500, 0x32}, {0xc00192bd30, 0x9}, {0xc0019564b0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc0019280c0, {0xc0012f4500, 0x32}, {0xc00192bd30, 0x9}, {0xc0019564b0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc0019280c0, {0x2ebc328, 0xc0018c87e0}, 0xc0007605c0)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc0017fca88, {0x2ebc328, 0xc0018c87e0})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 12
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+[Info  - 7:51:51 AM] Connection to server got closed. Server will restart.
+true
+[Error - 7:51:51 AM] Server process exited with code 2.
+I0411 07:51:51.550355    1835 serve.go:43] cloudcode_cli (Mar 25 2025 19:59:47 -0700, cl:740584268 baseline:740583863)
+I0411 07:51:51.550414    1835 serve.go:44] Command line: ["/home/huseyinbagci973/.cache/cloud-code/cloudcode_cli/cloudcode_cli/413fde1b/cloudcode_cli" "duet" "-logtostderr"]
+I0411 07:51:51.557417    1835 life_cycle.go:182] Initializing. Architecture: "amd64", Operating system: "linux"
+I0411 07:51:51.613142    1835 configuration.go:185] product updateChannel will be used
+I0411 07:51:51.613208    1835 configuration.go:686] language thresholds: map[]
+I0411 07:51:51.613227    1835 configuration.go:630] dataFileExtensions array: [.csv .tsv .jsonl]
+I0411 07:51:51.613249    1835 configuration.go:897] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc0012d89ed StopSequences:map[] DataFilePromptLines:0}
+I0411 07:51:51.613284    1835 configuration.go:897] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc0012d8a0d StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0411 07:51:51.613398    1835 configuration.go:279] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0411 07:51:51.613435    1835 configuration.go:287] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0411 07:51:51.613446    1835 configuration.go:291] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:0 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:false enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:4194304 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace raglEnableWaldFileSelection:false raglWaldMaxFileSearchDepth:0}
+I0411 07:51:51.613489    1835 configuration.go:293] Configured settings for canCancelRequests: true
+I0411 07:51:51.613499    1835 configuration.go:295] Configured settings for contextPromptOpts: &{Endpoint:}
+I0411 07:51:52.972592    1835 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:52.972630    1835 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:52.972645    1835 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:52.972663    1835 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:52.972680    1835 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:52.972692    1835 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:52.972708    1835 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:52.972720    1835 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:52.972735    1835 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:52.972762    1835 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:52.972776    1835 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:52.972786    1835 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:52.972800    1835 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:52.972809    1835 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:52.972819    1835 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:52.972829    1835 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:52.972842    1835 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:52.972850    1835 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:52.972865    1835 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:52.972884    1835 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:52.972901    1835 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:52.972912    1835 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:52.972923    1835 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:52.972940    1835 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:52.972954    1835 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:52.972969    1835 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:52.972986    1835 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:52.973005    1835 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:52.973063    1835 configuration.go:498] Repopulating context cache from document cache
+I0411 07:51:52.973152    1835 tier.go:17] Received tier configuration request: {ProjectID:cloudshell-gca UserDefinedCloudaicompanionProject:true}
+runtime: running GoogleExitFunction
+
+goroutine 27 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc0017506c0, {0xc0016a0400, 0x32}, {0xc001216a90, 0x9}, {0xc0003ad4a0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc0017506c0, {0xc0016a0400, 0x32}, {0xc001216a90, 0x9}, {0xc0003ad4a0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc0017506c0, {0x2ebc328, 0xc0003acbd0}, 0xc0010f88c0)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc00194e008, {0x2ebc328, 0xc0003acbd0})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 26
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1a7263f]
+
+goroutine 27 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc0017506c0, {0xc0016a0400, 0x32}, {0xc001216a90, 0x9}, {0xc0003ad4a0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc0017506c0, {0xc0016a0400, 0x32}, {0xc001216a90, 0x9}, {0xc0003ad4a0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc0017506c0, {0x2ebc328, 0xc0003acbd0}, 0xc0010f88c0)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc00194e008, {0x2ebc328, 0xc0003acbd0})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 26
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+[Info  - 7:51:52 AM] Connection to server got closed. Server will restart.
+true
+[Error - 7:51:53 AM] Server process exited with code 2.
+I0411 07:51:53.140471    1842 serve.go:43] cloudcode_cli (Mar 25 2025 19:59:47 -0700, cl:740584268 baseline:740583863)
+I0411 07:51:53.140518    1842 serve.go:44] Command line: ["/home/huseyinbagci973/.cache/cloud-code/cloudcode_cli/cloudcode_cli/413fde1b/cloudcode_cli" "duet" "-logtostderr"]
+I0411 07:51:53.142167    1842 life_cycle.go:182] Initializing. Architecture: "amd64", Operating system: "linux"
+I0411 07:51:53.201542    1842 configuration.go:185] product updateChannel will be used
+I0411 07:51:53.201597    1842 configuration.go:686] language thresholds: map[]
+I0411 07:51:53.201617    1842 configuration.go:630] dataFileExtensions array: [.csv .tsv .jsonl]
+I0411 07:51:53.201639    1842 configuration.go:897] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc0019420cd StopSequences:map[] DataFilePromptLines:0}
+I0411 07:51:53.201724    1842 configuration.go:897] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc0019420ed StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0411 07:51:53.201904    1842 configuration.go:279] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0411 07:51:53.201959    1842 configuration.go:287] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"AdaptiveCacheEnabled":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0411 07:51:53.201973    1842 configuration.go:291] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:0 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:false enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:4194304 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace raglEnableWaldFileSelection:false raglWaldMaxFileSearchDepth:0}
+I0411 07:51:53.202013    1842 configuration.go:293] Configured settings for canCancelRequests: true
+I0411 07:51:53.202036    1842 configuration.go:295] Configured settings for contextPromptOpts: &{Endpoint:}
+I0411 07:51:54.566844    1842 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0411 07:51:54.566900    1842 experiments.go:156] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0411 07:51:54.566917    1842 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0411 07:51:54.566936    1842 experiments.go:145] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0411 07:51:54.566948    1842 experiments.go:160] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0411 07:51:54.566979    1842 experiments.go:200] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0411 07:51:54.567008    1842 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0411 07:51:54.567019    1842 experiments.go:152] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0411 07:51:54.567033    1842 experiments.go:196] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0411 07:51:54.567077    1842 experiments.go:228] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value whitespace
+I0411 07:51:54.567100    1842 experiments.go:184] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 100
+I0411 07:51:54.567112    1842 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0411 07:51:54.567149    1842 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0411 07:51:54.567163    1842 experiments.go:180] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0411 07:51:54.567189    1842 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0411 07:51:54.567200    1842 experiments.go:164] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0411 07:51:54.567236    1842 experiments.go:220] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0411 07:51:54.567249    1842 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 2100000
+I0411 07:51:54.567265    1842 experiments.go:204] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0411 07:51:54.567285    1842 experiments.go:216] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0411 07:51:54.567313    1842 experiments.go:176] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0411 07:51:54.567332    1842 experiments.go:224] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0411 07:51:54.567347    1842 experiments.go:168] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0411 07:51:54.567359    1842 experiments.go:172] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0411 07:51:54.567374    1842 experiments.go:188] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0411 07:51:54.567408    1842 experiments.go:192] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0411 07:51:54.567425    1842 experiments.go:208] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0411 07:51:54.567448    1842 experiments.go:212] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0411 07:51:54.567503    1842 configuration.go:498] Repopulating context cache from document cache
+I0411 07:51:54.567642    1842 tier.go:17] Received tier configuration request: {ProjectID:cloudshell-gca UserDefinedCloudaicompanionProject:true}
+runtime: running GoogleExitFunction
+
+goroutine 25 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc000342840, {0xc0016bc9c0, 0x32}, {0xc001942810, 0x9}, {0xc0019503f0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc000342840, {0xc0016bc9c0, 0x32}, {0xc001942810, 0x9}, {0xc0019503f0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc000342840, {0x2ebc328, 0xc00193baa0}, 0xc000756fc0)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc001859508, {0x2ebc328, 0xc00193baa0})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 24
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x1a7263f]
+
+goroutine 25 [running]:
+google3/devtools/compliance/common/sets/sets.(*Set[...]).Insert(...)
+	devtools/compliance/common/sets/sets.go:125
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).update(0xc000342840, {0xc0016bc9c0, 0x32}, {0xc001942810, 0x9}, {0xc0019503f0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:633 +0x4df
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).upsert(0xc000342840, {0xc0016bc9c0, 0x32}, {0xc001942810, 0x9}, {0xc0019503f0, 0x1, 0x1}, 0x1)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:689 +0xa5
+google3/cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/ragl.(*ContextCache).DidOpen(0xc000342840, {0x2ebc328, 0xc00193baa0}, 0xc000756fc0)
+	cloud/developer_experience/cloudcode/ai_companion/pkg/ragl/rag_cache.go:984 +0x209
+google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).repopulateContextCache(0xc001859508, {0x2ebc328, 0xc00193baa0})
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/document.go:55 +0x168
+created by google3/cloud/developer_experience/cloudcode/ai_companion/language_server/server/server.(*Server).loadRAGLOptions in goroutine 24
+	cloud/developer_experience/cloudcode/ai_companion/language_server/server/configuration.go:499 +0xc8b
+[Error - 7:51:54 AM] The Gemini Code Assist server crashed 5 times in the last 3 minutes. The server will not be restarted. See the output for more information.
+[Error - 7:51:54 AM] Server process exited with code 2.

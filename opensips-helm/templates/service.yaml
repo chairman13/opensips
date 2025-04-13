@@ -1,0 +1,14 @@
+# ~/opensips-helm/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: opensips
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5060
+      targetPort: 5060
+      protocol: UDP
+      name: sip
+  selector:
+    app: opensips

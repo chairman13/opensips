@@ -1,0 +1,21 @@
+2025-04-11 07:50:34.457 [info] 
+
+
+
+
+2025-04-11 07:50:34.470 [info] Extension host agent started.
+2025-04-11 07:50:34.492 [info] Started initializing default profile extensions in extensions installation folder. file:///home/huseyinbagci973/.codeoss/extensions
+2025-04-11 07:50:34.514 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/huseyinbagci973/.codeoss/extensions
+2025-04-11 07:50:36.703 [info] [127.0.0.1][6c73d9d1][ManagementConnection] New connection established.
+2025-04-11 07:50:36.795 [info] [127.0.0.1][132fbccd][ExtensionHostConnection] New connection established.
+2025-04-11 07:50:38.916 [info] [127.0.0.1][132fbccd][ExtensionHostConnection] <1657> Launched Extension Host Process.
+2025-04-11 08:10:37.783 [info] [127.0.0.1][6c73d9d1][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-11 08:10:44.420 [info] [127.0.0.1][21b4af22][ManagementConnection] New connection established.
+2025-04-11 08:10:44.494 [info] [127.0.0.1][df788868][ExtensionHostConnection] New connection established.
+2025-04-11 08:10:44.498 [info] [127.0.0.1][df788868][ExtensionHostConnection] <2063> Launched Extension Host Process.
+2025-04-11 08:10:49.088 [info] [127.0.0.1][21b4af22][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-04-11 08:10:53.394 [info] [127.0.0.1][ed9af35a][ManagementConnection] New connection established.
+2025-04-11 08:10:53.472 [info] [127.0.0.1][41ad1dd9][ExtensionHostConnection] New connection established.
+2025-04-11 08:10:53.476 [info] [127.0.0.1][41ad1dd9][ExtensionHostConnection] <2094> Launched Extension Host Process.
+2025-04-11 08:15:44.630 [info] [127.0.0.1][132fbccd][ExtensionHostConnection] <1657> Extension Host Process exited with code: 0, signal: null.
+2025-04-11 08:15:53.614 [info] [127.0.0.1][df788868][ExtensionHostConnection] <2063> Extension Host Process exited with code: 0, signal: null.

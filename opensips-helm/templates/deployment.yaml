@@ -1,0 +1,33 @@
+# ~/opensips-helm/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opensips
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opensips
+  template:
+    metadata:
+      labels:
+        app: opensips
+    spec:
+      containers:
+        - name: opensips
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["/usr/local/sbin/opensips"]
+          args: ["-f", "/etc/opensips/opensips.cfg", "-m", "64", "-M", "8"]
+          ports:
+            - containerPort: {{ .Values.config.listen_port }}
+              name: sip
+              protocol: UDP
+          volumeMounts:
+            - name: opensips-config
+              mountPath: /etc/opensips/opensips.cfg
+              subPath: opensips.cfg
+      volumes:
+        - name: opensips-config
+          configMap:
+            name: opensips-config
