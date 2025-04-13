@@ -853,3 +853,16 @@ cd ..
 git init
 git remote add origin https://github.com/chairman13/opensips.git
 git remote -v
+git add .
+git commit -m "Initial commit - OpenSIPS on GCP with Kubernetes"
+git config --global user.email "hsynbgci@hotmail.com"
+git config --global user.name "Huseyin BAGCI"
+git commit -m "Initial commit - OpenSIPS on GCP with Kubernetes"
+git remote add origin https://github.com/chairman13/opensips.git
+git push -u origin master
+git rm --cached .kube/gke_gcloud_auth_plugin_cache
+git commit -m "Initial commit - OpenSIPS on GCP with Kubernetes"
+git commit -m "Commit - OpenSIPS on GCP with Kubernetes"
+git commit -a "Commit - OpenSIPS on GCP with Kubernetes"
+git add
+git commit -a "Commit - OpenSIPS on GCP with Kubernetes"
