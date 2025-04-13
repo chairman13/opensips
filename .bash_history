@@ -866,3 +866,13 @@ git commit -m "Commit - OpenSIPS on GCP with Kubernetes"
 git commit -a "Commit - OpenSIPS on GCP with Kubernetes"
 git add
 git commit -a "Commit - OpenSIPS on GCP with Kubernetes"
+git commit -am "Commit - OpenSIPS on GCP with Kubernetes"
+git add .
+git commit -m "Commit - OpenSIPS on GCP with Kubernetes"
+git push origin master --force
+git reset --soft HEAD~1
+rm -rf .kube/gke_gcloud_auth_plugin_cache
+rm -rf .cache/cloud-code
+git add opensips-helm README.md
+git commit -m "Clean commit - OpenSIPS on GCP with Kubernetes"
+git push origin master --force
